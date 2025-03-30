@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <style>
+        .resizable {
+          width: 80%; /* Example width */
+          height: 300px; /* Initial height */
+          resize: both;
+          overflow: auto;
+          border: 1px solid #000;
+          position: relative;
+        }
+
+        iframe {
+          width: 100%;
+          border: none;
+          display: block;
+        }
+    </style>
+
+<body>
+<div id="resizableDiv" class="resizable">
+  <iframe id="myIframe" src="your-source.html" frameborder="0"></iframe>
+
+</div>
+  <script>
+const resizableDiv = document.getElementById('resizableDiv');
+const iframe = document.getElementById('myIframe');
+
+// Function to update the iframe height
+function updateIframeHeight() {
+    console.log(iframe.style.height)  
+    iframe.style.height = `${resizableDiv.offsetHeight}px`;
+}
+
+// Initial update when the page loads
+updateIframeHeight();
+
+// Update iframe height on window resize (or on div resize if you have a custom resize listener)
+window.addEventListener('resize', updateIframeHeight);
+
+</script>
+</body>
+</html>

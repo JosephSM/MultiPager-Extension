@@ -1,0 +1,65 @@
+{
+  "name": "Hello Extensions",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "manifest_version": 2,
+  "incognito": "split",
+  "permissions": [
+    "cookies",
+    "webRequest",
+    "webRequestBlocking",
+    "tabs",
+    "scripting",
+    "http://*/",
+    "https://*/"
+  ],
+  "background": {
+    "service_worker": "scripts/background.js",
+    "type": "module"
+  },
+  "host_permissions": ["http://*/", "https://*/"],
+  "content_scripts": [
+    {
+      "js": ["scripts/multipager.js"],
+      "matches": [
+        "https://josephsm.github.io/MultiPager/*",
+        "file:///home/joseph/Desktop/MultiPager/index.html/*"
+      ],
+      "all_frames": true
+    },
+    {
+      "js": ["scripts/sefaria-talmud.js"],
+      "matches": ["https://www.sefaria.org/*"],
+      "all_frames": true
+    },
+    {
+      "js": ["scripts/zichru.js"],
+      "matches": ["https://www.zichru.com/*"],
+      "all_frames": true
+    },
+    {
+      "js": ["scripts/dafhachaimintro.js"],
+      "matches": ["https://dafhachaim.org/daf/intro/*"],
+      "all_frames": true
+    },
+    {
+      "js": ["scripts/dafhachaimshiur.js"],
+      "matches": [
+        "https://dafhachaim.org/daf/shiur/*",
+        "https://dafhachaim.org/daf/review/*"
+      ],
+      "world": "MAIN",
+      "all_frames": true
+    },
+    {
+      "js": ["scripts/alldaf.js"],
+      "matches": ["https://alldaf.org/p/*"],
+      "all_frames": true
+    },
+    {
+      "js": ["scripts/mishnahberurahyomishiur.js"],
+      "matches": ["https://mishnaberurayomi.org/mp3_shiurim/*"],
+      "all_frames": true
+    }
+  ]
+}
