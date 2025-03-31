@@ -61,6 +61,7 @@
     },
     {
       "js": ["scripts/mishnahberurahyomishiur.js"],
+      "css": ["styles/mishnahberurahyomishiur.css"],
       "matches": ["https://mishnaberurayomi.org/mp3_shiurim/*"],
       "all_frames": true
     }
