@@ -35,6 +35,7 @@
     },
     {
       "js": ["scripts/zichru.js"],
+      "css": ["styles/zichru.css"],
       "matches": ["https://www.zichru.com/*"],
       "all_frames": true
     },

@@ -72,3 +72,6 @@
 //     console.log("The page is not in an iFrame");
 //   }
 // });
+setTimeout(() => {
+  document.querySelector(".textColumn").scrollBy(0, 30);
+}, 500);

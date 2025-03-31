@@ -1,0 +1,37 @@
+
+.w-full.font-bold li, .w-full.font-bold span{
+
+    display:inline-block !important;
+	width:unset;
+}
+.w-full.font-bold li{
+    margin-right:10px;
+}
+
+span.hidden+span.block{
+    display:none !important;
+}
+.bg-gray-100{
+	.style.top = 0
+}
+nav{
+	.parentElement.remove()
+}
+.w-full.font-bold .uppercase{
+	.parentElement.parentElement.style.position = "fixed"
+}
+.w-full.font-bold .uppercase{
+	.parentElement.parentElement.style["z-index"] = 180
+}
+.w-full.font-bold .uppercase{
+	.parentElement.parentElement.style.top = "160px"
+}
+.w-full.font-bold .uppercase{
+	.parentElement.parentElement.style.width = "100%";
+}
+img.cld-image{
+	.remove()
+}
+img.cld-image{
+	.parentElement.parentElement.remove()
+}
