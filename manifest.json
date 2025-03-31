@@ -41,6 +41,7 @@
     },
     {
       "js": ["scripts/dafhachaimintro.js"],
+      "css": ["styles/dafhachaimintro.css"],
       "matches": [
         "https://dafhachaim.org/daf/intro/*",
         "https://dafhachaim.org/daf/review/*"
