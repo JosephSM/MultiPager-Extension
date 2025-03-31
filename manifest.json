@@ -1,7 +1,7 @@
 {
   "name": "Hello Extensions",
   "description": "Base Level Extension",
-  "version": "1.0",
+  "version": "2.0",
   "manifest_version": 2,
   "incognito": "split",
   "permissions": [
@@ -39,15 +39,15 @@
     },
     {
       "js": ["scripts/dafhachaimintro.js"],
-      "matches": ["https://dafhachaim.org/daf/intro/*"],
+      "matches": [
+        "https://dafhachaim.org/daf/intro/*",
+        "https://dafhachaim.org/daf/review/*"
+      ],
       "all_frames": true
     },
     {
       "js": ["scripts/dafhachaimshiur.js"],
-      "matches": [
-        "https://dafhachaim.org/daf/shiur/*",
-        "https://dafhachaim.org/daf/review/*"
-      ],
+      "matches": ["https://dafhachaim.org/daf/shiur/*"],
       "world": "MAIN",
       "all_frames": true
     },
