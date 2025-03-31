@@ -1,0 +1,76 @@
+.readerControls {
+background: none !important;
+box-shadow: none !important;
+background:transparent !important;
+}
+
+
+.readerControlsOuter{
+background:transparent !important;
+position: absolute !important;
+width:100% !important;
+}
+
+#panelWrapBox>.readerPanelBox:first-child .leftButtons+.readerTextToc {
+display: none !important;
+}
+.saveButton {
+display:none !important;
+}
+
+.textList.singlePanel .connectionsHeader .topFilters{
+    overflow-x: visible !important;
+}
+
+.readerContent{
+height: 100% !important;
+}
+/*
+.readerControls.transLangPrefSuggBann{
+    display:none !important;
+}
+*/
+.cookiesNotification{
+	display:none !important;
+}
+
+
+.transLangPrefSuggBann{
+	display:none !important;
+}
+
+#bannerMessage{
+	display:none !important;
+}
+/*
+.readerControlsOuter{
+	display:none !important;
+    background: transparent;
+    position: fixed !important;
+    width: 100%;
+} 
+header.readerControls{
+    background: None;
+    box-shadow: None;
+}
+.readerTextToc{
+	display:none !important;
+}
+
+.saveButton.tooltip-toggle{
+	display:none !important;
+}
+*/
+div.header[role=banner]{
+	display:none !important;
+}
+
+/*
+.readerContent{
+    height: 100% !important; 
+}
+    */
+ #panelWrapBox{
+	height:100% !important;
+    top:0 !important;
+}  
