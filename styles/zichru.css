@@ -11,3 +11,23 @@
 span.hidden+span.block{
     display:none !important;
 }
+
+.w-full.h-full.flex-col>.container.relative.items-center{
+    position:fixed !important;
+
+}
+
+.w-full.h-full.flex-col>.container.relative.items-center button{
+    position:fixed !important;
+    right:10px !important;
+    top:10px !important;
+    z-index:1000 !important;
+}
+
+.container.relative.h-16{
+    z-index:1000;
+}
+
+.container.relative.h-16 button {
+    background: black;
+}

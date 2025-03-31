@@ -9,4 +9,9 @@ setTimeout(() => {
   document.querySelectorAll(".max-w-sm").forEach((e) => {
     e.classList.remove("max-w-sm");
   });
-}, 1000);
+}, 100);
+
+// document.body.addEventListener("click", () => {
+//   const screen = document.querySelector(".z-80");
+//   screen && screen.remove();
+// });

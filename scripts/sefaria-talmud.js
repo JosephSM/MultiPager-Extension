@@ -1,6 +1,6 @@
-// function makeItHappen(arr, f) {
-//   arr.forEach((x) => setTimeout(() => f(), x));
-// }
+function makeItHappen(arr, f) {
+  arr.forEach((x) => setTimeout(() => f(), x));
+}
 
 // makeItHappen([500, 1000, 1500, 2000, 3000, 4000, 10000], () => {
 //   console.log("sefaria-talmud.js");
@@ -72,6 +72,8 @@
 //     console.log("The page is not in an iFrame");
 //   }
 // });
-setTimeout(() => {
-  document.querySelector(".textColumn").scrollBy(0, 30);
-}, 500);
+
+makeItHappen(
+  [100, 300, 500],
+  document.querySelector(".textColumn").scrollTo(0, 100)
+);
