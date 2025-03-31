@@ -2,5 +2,11 @@ video, audio {
     width: 99% !important;
     height: 35px !important;
     margin: 3px auto !important;
+    background-color: aliceblue !important;
+    border-radius: 100px !important;
+    opacity: 1 !important;
 }
 
+body {
+    background-color: grey;
+}
