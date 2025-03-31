@@ -1,0 +1,60 @@
+.readerControls {
+background: none;
+box-shadow: none;
+}
+.readerControlsOuter{
+background:transparent;
+position: fixed;
+width:100%;
+}
+.readerTextToc {
+display: none
+}
+.saveButton {
+display:none !important;
+}
+.readerContent{
+height: 100%
+}
+.readerControls.transLangPrefSuggBann{
+    display:none !important;
+}
+
+.cookiesNotification{
+	display:none !important;
+}
+.transLangPrefSuggBann{
+	display:none !important;
+}
+#bannerMessage{
+	display:none !important;
+}
+
+.readerControlsOuter{
+	/* display:none !important; */
+    background: transparent;
+    position: fixed !important;
+    width: 100%;
+}
+header.readerControls{
+    background: None;
+    box-shadow: None;
+}
+.readerTextToc{
+	display:none !important;
+}
+
+.saveButton.tooltip-toggle{
+	display:none !important;
+}
+
+div.header[role=banner]{
+	display:none !important;
+}
+.readerContent{
+    height: 100% !important; 
+}
+#panelWrapBox{
+	height:100% !important;
+    top:0 !important;
+}
