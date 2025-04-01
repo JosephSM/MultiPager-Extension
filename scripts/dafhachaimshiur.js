@@ -27,16 +27,20 @@ function main() {
   );
 
   var vid = document.querySelector("video") || popcorn.video;
-  var thecurrentTime = 0;
-  var mylastTime = -1;
+  //   var thecurrentTime = 0;
+  //   var mylastTime = -1;
+  var mynextTimeIndex = 1;
+  var mynextTime = daf.timePoints[mynextTimeIndex];
   vid.addEventListener(
     "timeupdate",
     (e) => {
       console.log("TIMEUPDAYE");
-      const mycurrentTime = (thecurrentTime = Math.floor(vid.currentTime));
-      if (mycurrentTime in highlighters && mycurrentTime !== mylastTime) {
-        mylastTime = mycurrentTime;
-        currentHighlighter = highlighters[mycurrentTime];
+      const mycurrentTime = vid.currentTime;
+      //   if (mycurrentTime in highlighters && mycurrentTime !== mynextTime) {
+      if (mycurrentTime >= mynextTime) {
+        mynextTimeIndex += 1;
+        mynextTime = daf.timePoints[mynextTimeIndex];
+        currentHighlighter = highlighters[Math.floor(mycurrentTime)];
         console.log(currentHighlighter);
         const HighlightPos = parseFloat(currentHighlighter.style.top);
         const HighlightPosX = parseFloat(currentHighlighter.style.left);
@@ -77,4 +81,4 @@ setTimeout(() => {
   (document.body || document.head || document.documentElement).appendChild(
     script
   );
-}, 2000);
+}, 4000);
