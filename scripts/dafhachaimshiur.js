@@ -9,15 +9,13 @@ function main() {
     opts[i].value = val;
   }
 
-  var hs = document.querySelectorAll(".highlighter");
   var canvas = document.querySelector("#canvasHolder");
-  var highlighters = {};
+  hs = document.querySelectorAll(".highlighter");
+  highlighters = {};
   for (let i = 0; i < hs.length; i++) {
     highlighters[daf.timePoints[i]] = hs[i];
   }
-  let vid = document.querySelector("video");
-  let thecurrentTime = 0;
-  let mylastTime = -1;
+
   console.log(
     "Daf Hachaim Time Data: ",
     hs,
@@ -27,41 +25,50 @@ function main() {
     daf,
     daf.timePoints
   );
-  vid.addEventListener("timeupdate", (e) => {
-    let mycurrentTime = (thecurrentTime = Math.floor(vid.currentTime));
-    if (mycurrentTime in highlighters && mycurrentTime !== mylastTime) {
-      mylastTime = mycurrentTime;
-      currentHighlighter = highlighters[mycurrentTime];
-      console.log(currentHighlighter);
-      var HighlightPos = parseFloat(currentHighlighter.style.top);
-      var HighlightPosX = parseFloat(currentHighlighter.style.left);
-      var HighlightWidth = parseFloat(currentHighlighter.style.width);
 
-      // 50 is height of top navbar, 50px
-      // 12 is the height of the highlight itself
-      var centerViewport = (window.innerHeight - 50) / 2 - 12;
-      console.log(
-        "viewport: ",
-        window.innerHeight,
-        canvas.OffsetTop, //this doesn't work
-        centerViewport
-      );
+  var vid = document.querySelector("video") || popcorn.video;
+  var thecurrentTime = 0;
+  var mylastTime = -1;
+  vid.addEventListener(
+    "timeupdate",
+    (e) => {
+      console.log("TIMEUPDAYE");
+      const mycurrentTime = (thecurrentTime = Math.floor(vid.currentTime));
+      if (mycurrentTime in highlighters && mycurrentTime !== mylastTime) {
+        mylastTime = mycurrentTime;
+        currentHighlighter = highlighters[mycurrentTime];
+        console.log(currentHighlighter);
+        const HighlightPos = parseFloat(currentHighlighter.style.top);
+        const HighlightPosX = parseFloat(currentHighlighter.style.left);
+        const HighlightWidth = parseFloat(currentHighlighter.style.width);
 
-      var maxScroll = canvas.scrollHeight - canvas.offsetHeight;
-      var scrollYTarget = HighlightPos - centerViewport;
+        // 50 is height of top navbar, 50px
+        // 12 is the height of the highlight itself
+        const centerViewport = (window.innerHeight - 50) / 2 - 12;
+        console.log(
+          "viewport: ",
+          window.innerHeight,
+          canvas.OffsetTop, //this doesn't work
+          centerViewport
+        );
 
-      //TODO: adjust zoom level and 71 fixed value depends on zoom level
-      var scrollXTarget =
-        HighlightPosX + 71 - (canvas.clientWidth - HighlightWidth) / 2;
-      $("#canvasHolder").animate({
-        scrollTop: scrollYTarget,
-        scrollLeft: scrollXTarget,
-      });
-      if (scrollYTarget > maxScroll) {
-        document.documentElement.scrollTo(0, scrollYTarget - maxScroll);
+        const maxScroll = canvas.scrollHeight - canvas.offsetHeight;
+        const scrollYTarget = HighlightPos - centerViewport;
+
+        //TODO: adjust zoom level and 71 fixed value depends on zoom level
+        const scrollXTarget =
+          HighlightPosX + 71 - (canvas.clientWidth - HighlightWidth) / 2;
+        $("#canvasHolder").animate({
+          scrollTop: scrollYTarget,
+          scrollLeft: scrollXTarget,
+        });
+        if (scrollYTarget > maxScroll) {
+          document.documentElement.scrollTo(0, scrollYTarget - maxScroll);
+        }
       }
-    }
-  });
+    },
+    { passive: true }
+  );
 }
 
 setTimeout(() => {
