@@ -1,3 +1,145 @@
+nav.navbar.navbar-inverse.navbar-fixed-top.navbar-app-pages[role=navigation]{
+    display:none !important;
+}
+
+div.navbar.navbar-fixed-top.daf-controls{
+    height:50px;
+    overflow: hidden;
+    
+}
+
+.daf-controls {
+    top: 0px !important;
+}
+
+#bd {
+    margin-top: 50px !important;
+}
+
+#canvasHolder {
+    margin:0px !important;
+    height:calc(100vh - 50px) !important;
+}
+
+div.container.borderd-container{
+    margin: 0px !important;
+    padding: 0px !important;
+
+    &>.row:first-child{
+        margin:0px;
+        &>.col-md-9:first-child{
+            padding:0px;
+        }
+    }
+}
+#feedbackTab {
+    display:none !important;
+}
+
+div.navbar.navbar-fixed-top.daf-controls > div.navbar-inner > div.container-fluid{
+    padding: 0px;
+}
+
+.control-bar-container {
+    padding:0px;
+    padding-top:4px !important;
+    margin:0px !important;
+}
+.time-rail {
+    margin:0px !important;
+    padding:0px !important;
+    display: inline-block !important;
+    top: 0px !important;
+    /* float:unset !important; */
+;
+    
+}
+.time {
+    margin:0px !important;
+    padding:0px !important;
+    display: inline-block !important;
+    position:relative !important;
+    /* top: -2px !important; */
+}
+div.volume-container{
+    margin:0px !important;
+    padding:0px !important;
+    display: inline-block !important;
+    top: 0px !important;
+    width:117px !important;
+    height: 16px !important;
+}
+
+div[data-scrubber] > *{
+    margin-top: 5px !important;
+    margin-right: 8px !important;
+    float:left !important;
+}
+
+div.navbar-right{
+    display: none;
+}
+
+div.btn-group.navbar-left{
+    height:0px !important;
+}
+a.playpause-button > i{
+    font-size: 17.7px !important;
+    padding-left:3px;
+}
+
+img[src="/images/pen.pointer.png"]{
+    display:none !important;
+}
+
+.fa-volume-up{
+    top:0px !important;
+    font-size: 17.7px !important;
+}
+
+div.volume-cell{
+    /* top:8px !important; */
+    position:relative !important;
+    display: inline-block !important;
+    padding-left: 3px;
+}
+.shiur-speed-container{
+    display: inline-block!important;
+    width:unset!important;
+    position:relative !important;
+    height: 16px !important;
+    /* top: -5px; */
+}
+.shiur-speed{
+    display:inline-block!important;
+    line-height: 0px  !important;
+}
+select[data-speed]{
+    position:relative !important;
+    border:none;
+    top: -2px !important;
+    padding: 0px !important;
+    width:unset !important;
+    height: 16px !important;
+    font-size: 14px !important;
+}
+.btn.playpause-button {
+    padding:0px !important;
+    margin:0px !important;
+}
+
+/* 
+
+
+
+#bd > div > div > div.col-md-9 {
+    padding: 0px;
+}
+
+ */
+
+
+
 
 
 

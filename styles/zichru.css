@@ -1,3 +1,6 @@
+nav.bg-primary.fixed.w-full.z-70.top-0{
+    display:none;
+}
 
 .w-full.font-bold li, .w-full.font-bold span{
 
@@ -30,4 +33,12 @@ span.hidden+span.block{
 
 .container.relative.h-16 button {
     background: black;
+}
+
+div.bg-gray-100{
+    top:0px !important;
+}
+
+#app > div.font-bold.relative.z-70{
+    display:none;
 }

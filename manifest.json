@@ -94,6 +94,7 @@
     },
     {
       "js": ["scripts/dafhachaimshiur.js"],
+      "css": ["styles/dafhachaimshiur.css"],
       "matches": ["https://dafhachaim.org/daf/shiur/*"],
       "world": "MAIN",
       "all_frames": true
