@@ -15,3 +15,13 @@ video {
 #bd{
         margin:0 !important;
 }
+
+.row {
+        margin-left: 0px !important; 
+        margin-right: 0px !important;
+}
+
+.col-md-9{
+        padding-left: 0px !important; 
+        padding-right: 0px !important;  
+}

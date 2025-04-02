@@ -1,7 +1,7 @@
 {
   "name": "Hello Extensions",
   "description": "Base Level Extension",
-  "version": "1.7",
+  "version": "1.8",
   "manifest_version": 2,
   "incognito": "split",
   "permissions": [
