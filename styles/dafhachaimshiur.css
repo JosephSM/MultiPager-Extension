@@ -64,15 +64,20 @@ div.navbar.navbar-fixed-top.daf-controls > div.navbar-inner > div.container-flui
 div.volume-container{
     margin:0px !important;
     padding:0px !important;
-    display: inline-block !important;
+    /* display: inline-block !important; */
     top: 0px !important;
     width:117px !important;
     height: 16px !important;
+    display:none !important;
+}
+
+div[data-scrubber]{
+    padding-left: 10px !important;
 }
 
 div[data-scrubber] > *{
     margin-top: 5px !important;
-    margin-right: 8px !important;
+    margin-right: 10px !important;
     float:left !important;
 }
 
