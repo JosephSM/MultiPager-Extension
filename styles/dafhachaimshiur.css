@@ -46,7 +46,7 @@ div.navbar.navbar-fixed-top.daf-controls > div.navbar-inner > div.container-flui
     margin:0px !important;
 }
 .time-rail {
-    margin:0px !important;
+    margin-left: 2px !important;
     padding:0px !important;
     display: inline-block !important;
     top: 0px !important;
