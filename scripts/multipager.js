@@ -1,12 +1,12 @@
 console.log("multipager.js");
 console.log(document);
 
-document.addEventListener("mouseup", (e) => {
-  var iframe = document.getElementById("Sefaria");
-  var idoc = iframe.contentDocument || iframe.contentWindow.document; // ie compatibility
+// document.addEventListener("mouseup", (e) => {
+//   var iframe = document.getElementById("Sefaria");
+//   var idoc = iframe.contentDocument || iframe.contentWindow.document; // ie compatibility
 
-  console.log(idoc.getSelection().toString());
-});
+//   console.log(idoc.getSelection().toString());
+// });
 
 if (window.location !== window.parent.location) {
   // The page is in an iFrames

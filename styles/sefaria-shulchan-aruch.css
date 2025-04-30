@@ -74,3 +74,7 @@ div.header[role=banner]{
 	height:100% !important;
     top:0 !important;
 }  
+
+.ub-emb-container{
+    display:none !important;
+}

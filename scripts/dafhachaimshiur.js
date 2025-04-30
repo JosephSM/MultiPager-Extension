@@ -28,19 +28,29 @@ function main() {
 
   var vid = document.querySelector("video") || popcorn.video;
   //   var thecurrentTime = 0;
-  //   var mylastTime = -1;
+  var mylastTime = 0;
   var mynextTimeIndex = 1;
   var mynextTime = daf.timePoints[mynextTimeIndex];
+  var direction = 1;
   vid.addEventListener(
     "timeupdate",
     (e) => {
-      console.log("TIMEUPDAYE");
+      console.log("TIMEUPDATE");
       const mycurrentTime = vid.currentTime;
       //   if (mycurrentTime in highlighters && mycurrentTime !== mynextTime) {
-      if (mycurrentTime >= mynextTime) {
-        mynextTimeIndex += 1;
+      if (mycurrentTime >= mynextTime || mycurrentTime < mylastTime) {
+        if (mycurrentTime >= mynextTime) {
+          currentHighlighter = highlighters[mynextTime];
+          mylastTime = mynextTime;
+          mynextTimeIndex += 1;
+          direction = 1;
+        } else {
+          mynextTimeIndex -= 1;
+          mylastTime = daf.timePoints[mynextTimeIndex - 1];
+          currentHighlighter = highlighters[mylastTime];
+          direction = -1;
+        }
         mynextTime = daf.timePoints[mynextTimeIndex];
-        currentHighlighter = highlighters[Math.floor(mycurrentTime)];
         console.log(currentHighlighter);
         const HighlightPos = parseFloat(currentHighlighter.style.top);
         const HighlightPosX = parseFloat(currentHighlighter.style.left);

@@ -20,6 +20,12 @@
   "host_permissions": ["http://*/", "https://*/"],
   "content_scripts": [
     {
+      "js": ["scripts/all.js"],
+      "css": ["styles/all.css"],
+      "matches": ["https://*/*"],
+      "all_frames": true
+    },
+    {
       "js": ["scripts/multipager.js"],
       "matches": [
         "https://josephsm.github.io/MultiPager/*",

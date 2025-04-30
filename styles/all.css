@@ -1,0 +1,21 @@
+.no-scroll{
+    overflow:hidden !important;
+}
+
+
+.no-scroll-btn{
+    position: fixed !important;
+    top: 15px !important;
+    right: 8px !important;
+    width: 15px !important;
+    fill: rgb(222, 194, 194) !important;
+    z-index: 100000 !important;
+    background: none !important;
+    border: none !important;
+    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
+}
+.no-scroll-btn:hover{
+    fill: violet !important;
+}
