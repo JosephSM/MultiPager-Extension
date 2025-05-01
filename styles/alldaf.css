@@ -1,0 +1,31 @@
+header.header {
+    display:none !important;
+}
+
+.sponsorship-section {
+    display:none !important;
+}
+
+.publication-action-bar.content__action-bar{
+    display:none !important;
+}
+
+.topline__right{
+    display: none !important;
+}
+
+.daf-image__toggle{
+    margin: 5px auto !important;
+}
+
+.video-box{
+    margin: 0px auto !important;
+}
+
+.content__left{
+    padding: 0px !important;
+}
+
+.hide{
+    display:none !important;
+}

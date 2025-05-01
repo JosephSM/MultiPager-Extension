@@ -1,7 +1,7 @@
 {
   "name": "Hello Extensions",
   "description": "Base Level Extension",
-  "version": "1.8",
+  "version": "1.9",
   "manifest_version": 2,
   "incognito": "split",
   "permissions": [
@@ -81,6 +81,12 @@
       "js": ["scripts/sefaria-shulchan-aruch.js"],
       "css": ["styles/sefaria-shulchan-aruch.css"],
       "matches": ["https://www.sefaria.org/Shulchan_Arukh*"],
+      "all_frames": true
+    },
+    {
+      "js": ["scripts/alldaf.js"],
+      "css": ["styles/alldaf.css"],
+      "matches": ["https://alldaf.org/p/*"],
       "all_frames": true
     },
     {
