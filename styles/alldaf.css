@@ -1,4 +1,4 @@
-header.header {
+header.header, .daf-image__container, .author-info {
     display:none !important;
 }
 

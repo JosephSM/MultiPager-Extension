@@ -121,6 +121,12 @@
       "css": ["styles/mishnahberurahyomishiur.css"],
       "matches": ["https://mishnaberurayomi.org/mp3_shiurim/*"],
       "all_frames": true
+    },
+    {
+      "js": ["scripts/yutorahdaf.js"],
+      "css": ["styles/yutorahdaf.css"],
+      "matches": ["https://www.yutorah.org/daf/*", "https://yutorah.org/daf/*"],
+      "all_frames": true
     }
   ]
 }

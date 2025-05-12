@@ -1,20 +1,14 @@
-// console.log("doc!", document.body);
-
 window.onload = () => {
   //   console.log("Dom loaded");
   if (window.self !== window.top) {
     // The page is in an iFrame
 
+    //Pass Selections to Parent
     document.addEventListener("mouseup", (e) => {
-      console.log(e, document.getSelection().toString());
-      //   window.alert(e.target);
-      parent.postMessage(
-        document.getSelection().toString(),
-        "https://josephsm.github.io"
-      );
+      settingsProxy.selection = document.getSelection().toString();
     });
-    // console.log("document!: ", document);
 
+    //Add No Scroll Button
     const noScrollBtn = document.createElement("button");
     noScrollBtn.className = "no-scroll-btn";
     noScrollBtn.innerHTML = `
@@ -24,26 +18,64 @@ window.onload = () => {
     `;
     document.body.insertBefore(noScrollBtn, document.body.firstChild);
 
-    if (window.location.href.startsWith("https://www.sefaria.org")) {
-      //   console.log("starts with!!!!");
-      setTimeout(() => {
-        const elem = document.querySelector("div.textColumn");
-        // console.log("elelm!!!!!! ", elem);
-        noScrollBtn.addEventListener(
-          "click",
-          () => {
-            // console.log("clicked!!!!");
-            elem.classList.toggle("no-scroll");
-          },
-          3000
-        );
-      });
-    } else {
-      noScrollBtn.addEventListener("click", () => {
-        document.body.classList.toggle("no-scroll");
-      });
-    }
-  } else {
-    console.log("The page is not in an iFrame");
+    var eventMethod = window.addEventListener
+      ? "addEventListener"
+      : "attachEvent";
+    var eventer = window[eventMethod];
+    var messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
+
+    eventer(messageEvent, function (e) {
+      let [prop, val, obj] = e.data;
+      // let iframe = Array.from(document.querySelectorAll("iframe")).filter((x) => x.contentWindow === e.source)[0]
+      // let title = Array.from(document.querySelectorAll(".accordian-item>div")).filter(x => x.querySelector("iframe").contentWindow === e.source)[0].firstElementChild.innerText
+      // if (prop === "noscroll")
+      //     settingsProxy.accordions[title].noscroll = val
+      // else if (prop === "scrollY"){
+      //     settingsProxy.accordions[title].scrollY = val
+      // }
+      console.log(`Prop ${prop} set to ${val} on ${e.origin}`, e);
+    });
+
+    let childSettings = {
+      noscroll: false,
+      selection: "",
+      scrollY: 0,
+    };
+
+    const proxyHandler = {
+      set(obj, prop, value) {
+        obj[prop] = value;
+        console.log(`Property ${prop} changed to ${value}: ${obj}`);
+        parent.postMessage([prop, value, obj], "*");
+        parent.postMessage([prop, value, obj], "https://josephsm.github.io");
+        if (prop === "noscroll") {
+          if (window.location.href.startsWith("https://www.sefaria.org")) {
+            document
+              .querySelector("div.textColumn")
+              .classList.toggle("no-scroll");
+          } else if (window.location.href.startsWith("https://alldaf.org/p")) {
+            document.querySelector(".topline").classList.toggle("hide");
+          } else if (
+            window.location.href.startsWith("https://yutorah.org") ||
+            window.location.href.startsWith("https://www.yutorah.org")
+          ) {
+            document
+              .querySelector("#wrap-holder")
+              .classList.toggle("no-scroll");
+          }
+          document.body.classList.toggle("no-scroll");
+        }
+        return true;
+      },
+    };
+
+    const settingsProxy = new Proxy(childSettings, proxyHandler);
+    //No Scroll Button Behavior
+    noScrollBtn.addEventListener("click", () => {
+      settingsProxy.noscroll = !childSettings.noscroll;
+    });
+    addEventListener("scroll", () => (settingsProxy.scrollY = scrollY));
+
+    // document.documentElement.scrollTo(0, 240.45713806152344)
   }
 };
