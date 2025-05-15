@@ -86,7 +86,7 @@
     {
       "js": ["scripts/alldaf.js"],
       "css": ["styles/alldaf.css"],
-      "matches": ["https://alldaf.org/p/*"],
+      "matches": ["https://alldaf.org/p/*", "https://alldaf.org/t/*"],
       "all_frames": true
     },
     {
@@ -109,11 +109,6 @@
       "css": ["styles/dafhachaimshiur.css"],
       "matches": ["https://dafhachaim.org/daf/shiur/*"],
       "world": "MAIN",
-      "all_frames": true
-    },
-    {
-      "js": ["scripts/alldaf.js"],
-      "matches": ["https://alldaf.org/p/*"],
       "all_frames": true
     },
     {
