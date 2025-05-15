@@ -9,10 +9,12 @@
 //         console.log("The page is not in an iFrame");
 //     }
 
-setTimeout(
-  () =>
-    document
-      .querySelectorAll("div[class^='sidebar-accordion'][class$='heading']")
-      .forEach((x) => x.click()),
-  1000
-);
+setTimeout(() => {
+  document
+    .querySelectorAll(".jw-float-bar.jw-reset")
+    .forEach((x) => x.remove());
+
+  document
+    .querySelectorAll("div[class^='sidebar-accordion'][class$='heading']")
+    .forEach((x) => x.click());
+}, 2000);

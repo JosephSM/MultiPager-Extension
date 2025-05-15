@@ -91,4 +91,4 @@ setTimeout(() => {
   (document.body || document.head || document.documentElement).appendChild(
     script
   );
-}, 4000);
+}, 6000);
