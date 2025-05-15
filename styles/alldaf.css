@@ -1,4 +1,4 @@
-header.header, .daf-image__container, .author-info {
+footer, header.header, .daf-image__container, .author-info {
     display:none !important;
 }
 
@@ -27,5 +27,80 @@ header.header, .daf-image__container, .author-info {
 }
 
 .hide{
+    display:none !important;
+}
+
+/* .post-video,
+.video-box{
+    padding:0px !important;
+    height:88px !important;
+    max-width: none;
+}
+*/
+
+/* #jw, */
+.jw-wrapper.jw-reset{
+    position: unset !important;
+}  
+
+.jw-media.jw-reset{
+    height: 360px;
+    max-height:395px;
+    resize:vertical;
+    z-index: 1;
+    position:relative;
+}
+
+
+#jw{
+    position:static !important
+}
+.jw-preview.jw-reset{
+    z-index:100
+}
+
+.post-video{
+    position:relative !important;
+    height: auto !important;
+}
+
+.video-box{
+    position:unset !important;
+    height: auto !important;
+    padding: 0px !important;
+}
+
+.jw-controls.jw-reset{
+    position:relative !important;
+    /* height: 44px; */
+}
+
+.jw-controlbar.jw-reset{
+    position: static !important;
+}
+.jw-display.jw-reset,
+.jw-preview.jw-reset{
+    display:none !important;
+}
+
+.jw-video{
+    /* height: 88px !important; */
+}
+
+/* .video-box,
+.jw-wrapper.jw-reset
+.post-video,  
+#jw, 
+.jw-overlays.jw-reset  */
+.jw-aspect.jw-reset
+{
+    /* height: auto !important; */
+    padding:0px !important;
+} 
+
+
+
+.preloader.video-box__preloader,
+.preloader__inner{
     display:none !important;
 }

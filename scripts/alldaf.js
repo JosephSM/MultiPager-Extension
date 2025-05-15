@@ -8,3 +8,11 @@
 //         // The page is not in an iFrame
 //         console.log("The page is not in an iFrame");
 //     }
+
+setTimeout(
+  () =>
+    document
+      .querySelectorAll("div[class^='sidebar-accordion'][class$='heading']")
+      .forEach((x) => x.click()),
+  1000
+);
