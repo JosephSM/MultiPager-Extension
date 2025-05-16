@@ -112,10 +112,6 @@ footer, header.header, .daf-image__container, .author-info {
     margin-top: 10px !important;
 }
 
-.jw-video{
-    /* height: 88px !important; */
-}
-
 /* .video-box,
 .jw-wrapper.jw-reset
 .post-video,  
@@ -132,4 +128,15 @@ footer, header.header, .daf-image__container, .author-info {
 .preloader.video-box__preloader,
 .preloader__inner{
     display:none !important;
+}
+
+.jw-icon.jw-icon-inline.jw-button-color.jw-reset.jw-icon-playback{
+    display: flex !important;
+}
+
+/* Style For Tosafos */
+div[class^=indent][class$=heb], div[class='topic__heading-he'] {
+    font-family:Roboto; 
+    font-weight: bold;
+    font-size: 1.4em;
 }
