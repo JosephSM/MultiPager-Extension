@@ -1,3 +1,5 @@
+// import { runOnElem, hello } from "./helper/helper";
+
 function main() {
   // enable this is you want to only work in iframes
   //   if (window.location !== window.parent.location) {
@@ -85,10 +87,26 @@ function main() {
   );
 }
 
-setTimeout(() => {
-  var script = document.createElement("script");
-  script.appendChild(document.createTextNode("(" + main + ")();"));
-  (document.body || document.head || document.documentElement).appendChild(
-    script
-  );
-}, 6000);
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function runOnElem(cssSelector, count = 1, func) {
+  while (document.querySelectorAll(cssSelector).length < count) {
+    await sleep(1000);
+  }
+  console.log("Found Elements!!!!!!!!", document.querySelectorAll(cssSelector));
+  func();
+}
+
+runOnElem(
+  "video, #canvasHolder, #dafPanner, .time.navbar-left, .highlighter",
+  (count = 5),
+  () => {
+    var script = document.createElement("script");
+    script.appendChild(document.createTextNode("(" + main + ")();"));
+    (document.body || document.head || document.documentElement).appendChild(
+      script
+    );
+  }
+);
