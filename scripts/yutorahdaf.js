@@ -1,5 +1,5 @@
 // removed = 0;
-function removeCrap() {
+function removeAds() {
   Array.from(
     document.querySelectorAll(
       'script[async], script[src^="https://js"], script[src*="beacon"], .top-ad, .promo-text-holder, #urchin_loggerFrame,.promo-text , iframe, *[id^="hs-web-interactives"], strong.logo, .header-info, .panel , .daf-subscribe, #footer, #notification-container, noscript, script[charset], img[style*="display: none;"], .top-ad, .promo-text-holder, #urchin_loggerFrame,.promo-text , iframe, *[id^="hs-web-interactives"], strong.logo, .header-info, .panel , .daf-subscribe, #footer'
@@ -10,13 +10,13 @@ function removeCrap() {
   });
 }
 
-removeCrap();
-setTimeout(removeCrap, 1000);
-setTimeout(removeCrap, 2000);
-setTimeout(removeCrap, 3000);
-setTimeout(removeCrap, 4000);
-setTimeout(removeCrap, 5000);
-setTimeout(removeCrap, 6000);
-setTimeout(removeCrap, 7000);
-setTimeout(removeCrap, 8000);
-setTimeout(removeCrap, 10000);
+removeAds();
+setTimeout(removeAds, 1000);
+setTimeout(removeAds, 2000);
+setTimeout(removeAds, 3000);
+setTimeout(removeAds, 4000);
+setTimeout(removeAds, 5000);
+setTimeout(removeAds, 6000);
+setTimeout(removeAds, 7000);
+setTimeout(removeAds, 8000);
+setTimeout(removeAds, 10000);
