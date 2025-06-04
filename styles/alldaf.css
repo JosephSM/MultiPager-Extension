@@ -134,9 +134,13 @@ footer, header.header, .daf-image__container, .author-info {
     display: flex !important;
 }
 
-/* Style For Tosafos */
-div[class^=indent][class$=heb], div[class='topic__heading-he'] {
+/* Style For Tosafos / written works */
+*[class*=dhheb], *[class*=heb], *[class='topic__heading-he'] {
     font-family:Roboto; 
     font-weight: bold;
     font-size: 1.4em;
+}
+
+.topic-page__h1, .topic-page__heading, .topic-page__author {
+    display:none !important;
 }
