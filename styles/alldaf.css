@@ -144,3 +144,8 @@ footer, header.header, .daf-image__container, .author-info {
 .topic-page__h1, .topic-page__heading, .topic-page__author {
     display:none !important;
 }
+
+.topic-page__h2{
+    padding-top:10px;
+    font-weight:bold;
+}
