@@ -122,6 +122,12 @@
       "css": ["styles/yutorahdaf.css"],
       "matches": ["https://www.yutorah.org/daf/*", "https://yutorah.org/daf/*"],
       "all_frames": true
+    },
+    {
+      "js": ["scripts/chabaddailytorah.js"],
+      "css": ["styles/chabaddailytorah.css"],
+      "matches": ["https://www.chabad.org/dailystudy/*.asp*"],
+      "all_frames": true
     }
   ]
 }

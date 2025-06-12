@@ -1,0 +1,58 @@
+div.language_toggle .co_toggle_buttons{
+    background-color: white;
+    top: 100px;
+    position: fixed;
+    left: 464px;
+}
+
+div.co_toggle_buttons:has(label[for="CommentaryToggle_Show"]) {
+    background-color: white;
+    top: 100px;
+    position: fixed;
+    left: 620px;
+  }
+
+  div.co_toggle_buttons div.label{
+    padding: 0px;
+    line-height: 1.4;
+  }
+  
+
+div.language_toggle div.label {
+    display:none;
+}
+
+div.language_toggle .wrapper {
+
+    height: 48px;
+
+}
+
+.co_body .date_navigation {
+    position:fixed;
+    top:100px;
+}
+
+#daily_study_media_player_container{
+    position:fixed;
+    top:130px;
+    height: 50px;
+}
+
+div.video_wrapper{
+    min-height: 419px !important; 
+    min-width: 800px !important;
+    /* position: fixed !important; */
+
+    padding-top: 10px !important;
+
+    &>div{
+        resize: both !important;
+        overflow: auto !important;
+        scrollbar-width: none; 
+    }
+}
+
+div.player_area {
+    background: none;
+}
