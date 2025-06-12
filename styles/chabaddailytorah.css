@@ -50,6 +50,8 @@ div.video_wrapper{
         resize: both !important;
         overflow: auto !important;
         scrollbar-width: none; 
+        height: 221px;
+        width: 366px;
     }
 }
 
