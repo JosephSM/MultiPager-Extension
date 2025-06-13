@@ -58,3 +58,29 @@ div.video_wrapper{
 div.player_area {
     background: none;
 }
+
+
+/* timestamp functionality */
+.timestamp-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.timestamp-span {
+    position: relative;
+    margin-right: -50px;
+    margin-left: 20px;
+    top: 0;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    z-index: 100;
+}
+
+
+
+
+td.hebrew .co_VerseNum, td.hebrew .co_RashiTitle{
+    position:relative;
+    z-index:100;
+}

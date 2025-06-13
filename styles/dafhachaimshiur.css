@@ -137,6 +137,18 @@ select[data-speed]{
 #bd > div:first-child {
     max-width: unset !important;
 }
+
+#presenter {
+    top:-150px !important;
+    left:-15px !important;
+    width: 150px !important;
+    height: 150px !important;
+}
+
+#presenter:hover{
+    opacity: 0.15 !important;
+}
+
 @media (min-width: 1200px) {
     .container {
         width: unset !important;
