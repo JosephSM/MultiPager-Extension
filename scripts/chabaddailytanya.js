@@ -57,9 +57,9 @@ function getTitle() {
 
 function saveTimestamps() {
   const results = Array.from(
-    document.querySelectorAll(".Co_Verse, .Co_Rashi")
+    document.querySelectorAll("span[lang='he'] p")
   ).map((el) => {
-    const data = el.querySelector("span[data-time]");
+    const data = el.parentElement.querySelector("span[data-time]");
     return data ? data.dataset.time : null;
   });
   console.log(results);
@@ -72,16 +72,14 @@ function setupClickableElements() {
   let timestamps = JSON.parse(localStorage.getItem(getTitle()));
   console.log(timestamps);
   //   debugger;
-  document
-    .querySelectorAll("td.hebrew .co_VerseNum, td.hebrew .co_RashiTitle")
-    .forEach((el, idx) => {
-      if (timestamps && timestamps[idx]) {
-        createAndRenderTimeSpan(el, timestamps[idx]);
-      }
-      el.addEventListener("click", function () {
-        createAndRenderTimeSpan(el);
-      });
+  document.querySelectorAll("span[lang='he'] p").forEach((el, idx) => {
+    if (timestamps && timestamps[idx]) {
+      createAndRenderTimeSpan(el, timestamps[idx]);
+    }
+    el.addEventListener("click", function () {
+      createAndRenderTimeSpan(el);
     });
+  });
 }
 
 document.querySelector(".media-options a:first-child").click();

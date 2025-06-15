@@ -1,6 +1,7 @@
 div.language_toggle .co_toggle_buttons{
     background-color: white;
     top: 100px;
+    z-index: 100;
     position: fixed;
     left: 464px;
 }
@@ -14,6 +15,7 @@ div.co_toggle_buttons:has(label[for="CommentaryToggle_Show"]) {
 
   div.co_toggle_buttons div.label{
     padding: 0px;
+    z-index: 100;
     line-height: 1.4;
   }
   
@@ -23,7 +25,7 @@ div.language_toggle div.label {
 }
 
 div.language_toggle .wrapper {
-
+    z-index: 100;
     height: 48px;
 
 }
@@ -31,12 +33,19 @@ div.language_toggle .wrapper {
 .co_body .date_navigation {
     position:fixed;
     top:100px;
+    z-index: 100;
 }
 
 #daily_study_media_player_container{
     position:fixed;
     top:130px;
+    z-index: 99;
     height: 50px;
+}
+
+.co_body.article-body.cf{
+    position: relative;
+    z-index:0;
 }
 
 div.video_wrapper{
@@ -57,6 +66,8 @@ div.video_wrapper{
 
 div.player_area {
     background: none;
+    z-index:100;
+    position: relalive;
 }
 
 
@@ -77,10 +88,21 @@ div.player_area {
     z-index: 100;
 }
 
+/* rambam */
+.r-timestamp-span {
+    position: relative;
+    margin-right: -100px;
+    margin-left: 20px;
+    top: 0;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    z-index: 110;
+}
 
 
 
-td.hebrew .co_VerseNum, td.hebrew .co_RashiTitle{
+td.hebrew .co_VerseNum, td.hebrew .co_RashiTitle,  .verse-wrapper, a.versenum{
     position:relative;
-    z-index:100;
+    z-index:119;
 }

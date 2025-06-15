@@ -128,6 +128,18 @@
       "css": ["styles/chabaddailytorah.css"],
       "matches": ["https://www.chabad.org/dailystudy/*.asp*"],
       "all_frames": true
+    },
+    {
+      "js": ["scripts/chabaddailytanya.js"],
+      "css": ["styles/chabaddailytorah.css"],
+      "matches": ["https://www.chabad.org/dailystudy/tanya.asp*"],
+      "all_frames": true
+    },
+    {
+      "js": ["scripts/chabaddailyrambam.js"],
+      "css": ["styles/chabaddailytorah.css"],
+      "matches": ["https://www.chabad.org/dailystudy/rambam.asp*"],
+      "all_frames": true
     }
   ]
 }

@@ -13,12 +13,12 @@ function formatTime(seconds) {
 
 function createAndRenderTimeSpan(element, time = null) {
   let media = getPlayingMedia();
-  media = document.querySelector("video");
+  // media = document.querySelector("video");
   media.play();
   if (!media) return;
   if (time === null) time = media.currentTime - 2;
   const timeSpan = document.createElement("span");
-  timeSpan.className = "timestamp-span";
+  timeSpan.className = "r-timestamp-span";
   timeSpan.textContent = formatTime(time);
   timeSpan.dataset.time = time;
 
@@ -40,13 +40,14 @@ function createAndRenderTimeSpan(element, time = null) {
     // }
   });
 
-  const prev = element.previousElementSibling;
-  if (prev && prev.tagName === "SPAN" && prev.dataset.time) {
+  const child = element.firstElementChild;
+  // console.log(element, prev, timeSpan);
+  if (!child) {
     // Replace old timestamp
-    element.parentNode.replaceChild(timeSpan, prev);
+    element.appendChild(timeSpan);
   } else {
     // Insert new timestamp
-    element.parentNode.insertBefore(timeSpan, element);
+    element.replaceChild(timeSpan, child);
   }
   saveTimestamps();
 }
@@ -57,9 +58,9 @@ function getTitle() {
 
 function saveTimestamps() {
   const results = Array.from(
-    document.querySelectorAll(".Co_Verse, .Co_Rashi")
+    document.querySelectorAll("span[lang='he'] .versenum")
   ).map((el) => {
-    const data = el.querySelector("span[data-time]");
+    const data = el.parentElement.querySelector("span[data-time]");
     return data ? data.dataset.time : null;
   });
   console.log(results);
@@ -72,18 +73,18 @@ function setupClickableElements() {
   let timestamps = JSON.parse(localStorage.getItem(getTitle()));
   console.log(timestamps);
   //   debugger;
-  document
-    .querySelectorAll("td.hebrew .co_VerseNum, td.hebrew .co_RashiTitle")
-    .forEach((el, idx) => {
-      if (timestamps && timestamps[idx]) {
-        createAndRenderTimeSpan(el, timestamps[idx]);
-      }
-      el.addEventListener("click", function () {
-        createAndRenderTimeSpan(el);
-      });
+  document.querySelectorAll("span[lang='he'] .versenum").forEach((el, idx) => {
+    // el.setAttribute("disabled", "disabled");
+    el.setAttribute("href", "javscript:void(0)");
+    if (timestamps && timestamps[idx]) {
+      createAndRenderTimeSpan(el, timestamps[idx]);
+    }
+    el.addEventListener("click", function () {
+      createAndRenderTimeSpan(el);
     });
+  });
 }
 
 document.querySelector(".media-options a:first-child").click();
 
-setTimeout(() => setupClickableElements(), 3000);
+setTimeout(() => setupClickableElements(), 5000);
