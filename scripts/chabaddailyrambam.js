@@ -28,6 +28,9 @@ function createAndRenderTimeSpan(element, time = null) {
     media.pause();
     media.currentTime = parseFloat(timeSpan.dataset.time);
     media.play();
+    media.dispatchEvent(new Event("mouseup"));
+    media.dispatchEvent(new Event("mouseup"));
+
     // media.pause();
     // media.play();
     // media.play().then(() => {

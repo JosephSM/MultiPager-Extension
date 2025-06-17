@@ -1,21 +1,21 @@
 div.language_toggle .co_toggle_buttons{
     background-color: white;
-    top: 100px;
+    top: 0px;
     z-index: 100;
     position: fixed;
-    left: 464px;
+    left: 564px;
 }
 
 div.co_toggle_buttons:has(label[for="CommentaryToggle_Show"]) {
     background-color: white;
-    top: 100px;
+    top: 0px;
     position: fixed;
-    left: 620px;
+    left: 720px;
   }
 
   div.co_toggle_buttons div.label{
     padding: 0px;
-    z-index: 100;
+    /* z-index: 100; */
     line-height: 1.4;
   }
   
@@ -25,49 +25,52 @@ div.language_toggle div.label {
 }
 
 div.language_toggle .wrapper {
-    z-index: 100;
+    /* z-index: 100; */
     height: 48px;
 
 }
 
 .co_body .date_navigation {
     position:fixed;
-    top:100px;
-    z-index: 100;
+    top:0px;
+    /* z-index: 100; */
 }
 
 #daily_study_media_player_container{
     position:fixed;
-    top:130px;
-    z-index: 99;
+    top:27.5px;
+
+    /* z-index: 99; */
     height: 50px;
 }
 
-.co_body.article-body.cf{
+/* .co_body.article-body.cf{
     position: relative;
     z-index:0;
-}
+} */
 
 div.video_wrapper{
-    min-height: 419px !important; 
-    min-width: 800px !important;
+    /* min-height: 419px !important; 
+    min-width: 800px !important; */
     /* position: fixed !important; */
 
     padding-top: 10px !important;
+    resize: both !important;
+    overflow: auto !important;
+    scrollbar-width: none; 
 
     &>div{
-        resize: both !important;
-        overflow: auto !important;
-        scrollbar-width: none; 
-        height: 221px;
-        width: 366px;
+        /* height: 221px;
+        width: 366px; */
+        height: 100%;
+        width: 100%;
     }
 }
 
 div.player_area {
     background: none;
-    z-index:100;
-    position: relalive;
+    /* z-index:100;
+    position: relalive; */
 }
 
 
@@ -80,7 +83,7 @@ div.player_area {
 .timestamp-span {
     position: relative;
     margin-right: -50px;
-    margin-left: 20px;
+    margin-left: 12px;
     top: 0;
     color: blue;
     text-decoration: underline;
@@ -88,21 +91,79 @@ div.player_area {
     z-index: 100;
 }
 
-/* rambam */
-.r-timestamp-span {
+
+ .r-timestamp-span {
     position: relative;
-    margin-right: -100px;
-    margin-left: 20px;
+    padding: 0 10px;
+    font-size: 23px;
     top: 0;
     color: blue;
     text-decoration: underline;
     cursor: pointer;
     z-index: 110;
+} 
+
+
+
+td.hebrew .co_VerseNum, td.hebrew .co_RashiTitle,  a.versenum{
+    position:relative;
+    z-index:119;
 }
 
 
 
-td.hebrew .co_VerseNum, td.hebrew .co_RashiTitle,  .verse-wrapper, a.versenum{
-    position:relative;
-    z-index:119;
+.media{
+    padding: 0px !important;
+    /* margin: 15px; */
+    height:0px;
+    overflow: hidden;
+}
+
+ #media_list, .js-show-advanced-classes-button{
+    visibility:hidden;
+}
+
+#BodyContainer{
+    top: 113px;
+    width: 100% !important;
+}
+
+
+#co_body_container{
+    width: 85vw;
+    margin: 0 auto;
+    display: block;
+    float: none;
+}
+
+#footer, .book-info-container-margin, .mobile_wrapper_container, #co_menu_container, #header, .notice, aside.page-tools-sidebar,
+#media_container .top_padding  .js-podcast-layer-button{
+    display:none !important;
+}
+
+@media screen and (max-width: 768px){
+    .co_local_menu{
+        display: initial !important;
+        position: initial !important;
+        background-color:darkorange !important;
+        padding: initial !important;
+        border-bottom: initial !important;
+        margin-bottom: initial !important;
+        z-index: initial !important;
+        width: 100% !important;
+        float: none !important;
+    }
+}
+.co_local_menu{
+    width: 100% !important;
+    display: block;
+}
+.co_local_menu .item{
+    width: auto;
+    display: inline-block;
+}
+
+#co_content_container{
+    top:123px;
+    width: 100%;
 }
