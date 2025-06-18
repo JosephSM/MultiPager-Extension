@@ -1,16 +1,19 @@
 div.language_toggle .co_toggle_buttons{
     background-color: white;
     top: 0px;
-    z-index: 100;
+    z-index: 130;
     position: fixed;
-    left: 564px;
+    right: 20px;
 }
 
 div.co_toggle_buttons:has(label[for="CommentaryToggle_Show"]) {
-    background-color: white;
     top: 0px;
     position: fixed;
-    left: 720px;
+    right: 200px;
+    z-index: 154;
+    & label{
+        background-color: white;
+    }
   }
 
   div.co_toggle_buttons div.label{
@@ -25,7 +28,7 @@ div.language_toggle div.label {
 }
 
 div.language_toggle .wrapper {
-    /* z-index: 100; */
+    z-index: 125;
     height: 48px;
 
 }
@@ -33,14 +36,24 @@ div.language_toggle .wrapper {
 .co_body .date_navigation {
     position:fixed;
     top:0px;
-    /* z-index: 100; */
+    height: 77px;
+    width: 100%;
+    left: 0px;
+    z-index: 125;
+
+    &>.float_right{
+        float:left;
+        clear:both;
+        padding-left:10px;
+    }
 }
 
 #daily_study_media_player_container{
     position:fixed;
-    top:27.5px;
-
-    /* z-index: 99; */
+    top:56.5px;
+    left: 0px;
+    width: 100px;
+    z-index: 130;
     height: 50px;
 }
 
@@ -53,12 +66,13 @@ div.video_wrapper{
     /* min-height: 419px !important; 
     min-width: 800px !important; */
     /* position: fixed !important; */
-
+    width: calc(100vw - 12px) !important;
+    /* width: 100vw !important; */
     padding-top: 10px !important;
     resize: both !important;
     overflow: auto !important;
     scrollbar-width: none; 
-
+    z-index: 150;
     &>div{
         /* height: 221px;
         width: 366px; */
@@ -136,7 +150,7 @@ td.hebrew .co_VerseNum, td.hebrew .co_RashiTitle,  a.versenum{
     float: none;
 }
 
-#footer, .book-info-container-margin, .mobile_wrapper_container, #co_menu_container, #header, .notice, aside.page-tools-sidebar,
+#footer, .menu_wrapper, .book-info-container-margin, #co_menu_container, #header, .notice, aside.page-tools-sidebar,
 #media_container .top_padding  .js-podcast-layer-button{
     display:none !important;
 }
