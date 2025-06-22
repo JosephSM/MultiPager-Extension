@@ -3,11 +3,6 @@ window.onload = () => {
   if (window.self !== window.top) {
     // The page is in an iFrame
 
-    //Pass Selections to Parent
-    document.addEventListener("mouseup", (e) => {
-      settingsProxy.selection = document.getSelection().toString();
-    });
-
     //Add No Scroll Button
     const noScrollBtn = document.createElement("button");
     noScrollBtn.className = "no-scroll-btn";
@@ -18,24 +13,7 @@ window.onload = () => {
     `;
     document.body.insertBefore(noScrollBtn, document.body.firstChild);
 
-    var eventMethod = window.addEventListener
-      ? "addEventListener"
-      : "attachEvent";
-    var eventer = window[eventMethod];
-    var messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
-
-    eventer(messageEvent, function (e) {
-      let [prop, val, obj] = e.data;
-      // let iframe = Array.from(document.querySelectorAll("iframe")).filter((x) => x.contentWindow === e.source)[0]
-      // let title = Array.from(document.querySelectorAll(".accordian-item>div")).filter(x => x.querySelector("iframe").contentWindow === e.source)[0].firstElementChild.innerText
-      // if (prop === "noscroll")
-      //     settingsProxy.accordions[title].noscroll = val
-      // else if (prop === "scrollY"){
-      //     settingsProxy.accordions[title].scrollY = val
-      // }
-      console.log(`Prop ${prop} set to ${val} on ${e.origin}`, e);
-    });
-
+    // When childSettings object is changed proxyHandler is run
     let childSettings = {
       noscroll: false,
       selection: "",
@@ -46,7 +24,7 @@ window.onload = () => {
       set(obj, prop, value) {
         obj[prop] = value;
         console.log(`Property ${prop} changed to ${value}: ${obj}`);
-        parent.postMessage([prop, value, obj], "*");
+        // parent.postMessage([prop, value, obj], "*");
         parent.postMessage([prop, value, obj], "https://josephsm.github.io");
         if (prop === "noscroll") {
           if (window.location.href.startsWith("https://www.sefaria.org")) {
@@ -76,6 +54,21 @@ window.onload = () => {
     });
     addEventListener("scroll", () => (settingsProxy.scrollY = scrollY));
 
+    //Selection
+    // Capture text selection from both mouse and keyboard
+    function updateSelection() {
+      const selection = document.getSelection();
+      if (selection && selection.toString().trim() !== "") {
+        settingsProxy.selection = selection.toString();
+      }
+    }
+
+    document.addEventListener("mouseup", updateSelection);
+    document.addEventListener("keyup", updateSelection);
+    document.addEventListener("selectionchange", () => {
+      // Delay a bit to allow selection UI to finalize on mobile
+      setTimeout(updateSelection, 10);
+    });
     // document.documentElement.scrollTo(0, 240.45713806152344)
   }
 };

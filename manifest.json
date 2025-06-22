@@ -140,6 +140,12 @@
       "css": ["styles/chabaddailytorah.css"],
       "matches": ["https://www.chabad.org/dailystudy/rambam.asp*"],
       "all_frames": true
+    },
+    {
+      "js": ["scripts/bing_translator.js"],
+      "css": ["styles/bing_translator.css"],
+      "matches": ["https://www.bing.com/translator*"],
+      "all_frames": true
     }
   ]
 }

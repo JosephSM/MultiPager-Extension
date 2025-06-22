@@ -1,0 +1,12 @@
+#theader, nav, footer, #tta_phrasebook, #t_lang_attr{
+    display: none !important;
+}
+
+#tt_translatorHome{
+    margin:0 !important;
+    width: 100vw !important;
+}
+
+tbody{
+    height: 100vh !important;
+}

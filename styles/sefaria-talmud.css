@@ -1,3 +1,8 @@
+.contentSpan{
+    z-index: 1000 !important;
+    position: relative !important;
+}
+
 .readerControls {
 background: none;
 box-shadow: none;
