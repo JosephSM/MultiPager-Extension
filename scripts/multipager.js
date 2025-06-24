@@ -44,3 +44,22 @@ if (window.location !== window.parent.location) {
   // The page is not in an iFrame
   console.log("The page is not in an iFrame");
 }
+
+window.addEventListener("message", function (e) {
+  if (e.data?.type === "forward-paste-to-ocr") {
+    // Relay to the OCR iframe
+    const ocrIframe = Array.from(document.querySelectorAll("iframe")).find(
+      (f) => f.src.includes("i2ocr") || f.dataset.role === "ocr"
+    );
+
+    if (ocrIframe?.contentWindow) {
+      ocrIframe.contentWindow.postMessage(
+        {
+          type: "simulate-paste",
+          file: e.data.file,
+        },
+        "*"
+      );
+    }
+  }
+});

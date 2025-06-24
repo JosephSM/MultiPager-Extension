@@ -68,6 +68,7 @@ div.video_wrapper{
     /* position: fixed !important; */
     width: calc(100vw - 12px) !important;
     /* width: 100vw !important; */
+    height:200px !important;
     padding-top: 10px !important;
     resize: both !important;
     overflow: auto !important;

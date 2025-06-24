@@ -1,0 +1,29 @@
+.nav-gear{
+    position:fixed;
+    right:10px;
+    top: 10px;
+    z-index: 100
+    background-color: black;
+}
+
+nav.navbar.topbar{
+    display:none;
+}
+
+.scroll-container{
+    top:0px !important;
+    bottom: 0px !important;
+    height: 100% !important;
+}
+
+.parshan-icon, .verse-audio, .verse-bookmark{
+    display:none !important; 
+}
+
+.parshan-minimize.parshan-icon{
+    display:relative  !important;
+}
+
+#selection-menu{
+    display: none !important;
+}

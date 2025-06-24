@@ -1,0 +1,68 @@
+.row-fluid.center > .span6:last-child, nav, .navbar, footer, #promo, li[id], div[style^='margin-left:6px'], div[style^='text-align:center; margin:25'], div[style^='text-align:center; margin:20'] {
+    display:none !important;
+}
+div.span6{
+    width: 100% !important;
+}
+
+body, #wrapper, html{
+    height: unset;
+}
+
+div#content{
+    padding: 0px;
+}
+
+/* hide-everything.css */
+
+/* hide-everything.css */
+
+/* Make all elements invisible but still present */
+/* body *:not(#ocrTextBox) {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    margin:0;
+    padding:0;
+    height: 0;
+  }
+   */
+  /* Restore visibility for OCR text area */
+  /* #ocrTextBox {
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    font-size: 1.3em;
+    direction: rtl;
+    padding: 1em;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: #fff;
+    color: #000;
+    font-family: sans-serif;
+    position: relative;
+    z-index: 999999; /* Ensure it's on top 
+  }
+  */
+  body > *:not(#ocrTextBox) {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+  
+  #ocrTextBox {
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+    box-sizing: border-box;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0px !important;
+    display: block !important;
+  }
+  
+  

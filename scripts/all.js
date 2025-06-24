@@ -71,4 +71,32 @@ window.onload = () => {
     });
     // document.documentElement.scrollTo(0, 240.45713806152344)
   }
+
+  // iframe-listener.js (runs in all non-OCR iframes)
+  window.addEventListener("paste", (e) => {
+    const items = e.clipboardData.items;
+    for (const item of items) {
+      if (item.kind === "file") {
+        const file = item.getAsFile();
+
+        const reader = new FileReader();
+        reader.onload = () => {
+          const dataUrl = reader.result;
+
+          // Send message up to parent window
+          window.parent.postMessage(
+            {
+              type: "forward-paste-to-ocr",
+              file: {
+                name: file.name,
+                dataUrl,
+              },
+            },
+            "*"
+          );
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  });
 };

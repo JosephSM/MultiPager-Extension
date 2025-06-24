@@ -17,7 +17,7 @@
     "service_worker": "scripts/background.js",
     "type": "module"
   },
-  "host_permissions": ["http://*/", "https://*/"],
+  "host_permissions": ["http://*/", "https://*/", "*://*/*"],
   "content_scripts": [
     {
       "js": ["scripts/all.js"],
@@ -145,6 +145,18 @@
       "js": ["scripts/bing_translator.js"],
       "css": ["styles/bing_translator.css"],
       "matches": ["https://www.bing.com/translator*"],
+      "all_frames": true
+    },
+    {
+      "js": ["scripts/ocr.js"],
+      "css": ["styles/ocr.css"],
+      "matches": ["https://www.i2ocr.com/*"],
+      "all_frames": true
+    },
+    {
+      "js": ["scripts/alhatorah.js"],
+      "css": ["styles/alhatorah.css"],
+      "matches": ["https://*.alhatorah.org/Full/*"],
       "all_frames": true
     }
   ]
