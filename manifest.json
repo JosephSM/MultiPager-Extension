@@ -158,6 +158,12 @@
       "css": ["styles/alhatorah.css"],
       "matches": ["https://*.alhatorah.org/Full/*"],
       "all_frames": true
+    },
+    {
+      "js": ["scripts/kolleliyun.js"],
+      "css": ["styles/kolleliyun.css"],
+      "matches": ["https://dafyomi.co.il/new_daflinks.php?gid=*&daf=*"],
+      "all_frames": true
     }
   ]
 }

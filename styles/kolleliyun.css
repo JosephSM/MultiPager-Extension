@@ -1,0 +1,11 @@
+.panel.panel-default.custom-panel{
+    margin: 0 auto;
+}
+
+.panel-heading.custom-panel-heading{
+    display: none;
+}
+
+#wrapper *{
+    display: none;
+}
