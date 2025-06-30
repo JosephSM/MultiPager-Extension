@@ -1,13 +1,74 @@
+
+/* @import url('https://fonts.googleapis.cm/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap'); */
+
+@font-face {
+    font-family: 'Taamey Frank';
+    src: url('fonts/Amiri-Taamey-Frank-merged.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+div.content::before{
+    margin-bottom: 5px !important;
+}
+
+.verse{
+    font-family: "Taamey Frank" !important;
+    background: none !important;
+}
+
+
 .nav-gear{
     position:fixed;
     right:10px;
     top: 10px;
-    z-index: 100
-    background-color: black;
+    z-index: 100;
 }
 
-nav.navbar.topbar{
-    display:none;
+.aht-src-h2{
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+ .mehadurot, .arrow, .daf-icon, .parshan-copyright, .verse-copyright, .parshan-bookmark, .verse-audio, .verse-bookmark,  nav.navbar.topbar,  #selection-menu{
+    display:none !important;
+}
+
+.verse .num {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.verse > .main{
+    text-align: center !important;
+}
+
+.longParshan-inner{
+    overflow:hidden !important;
+}
+
+.mg-verse-iconbar{
+    position:absolute;
+    left: 10px;
+    display: inline-block;
+}
+
+.mg-main-shas, .mg-main-rambam{
+    max-width: 530px !important;
+    display:inline-block;
+    margin: 0 auto !important;
+
+    &::after{
+        padding-bottom: 15px;
+        border-bottom: 1px solid black;
+        max-width: 530px;
+        height:1px;
+        width: 40vw;
+        margin:0 auto;
+        content: "";
+        display: block;
+    }
 }
 
 .scroll-container{
@@ -16,14 +77,7 @@ nav.navbar.topbar{
     height: 100% !important;
 }
 
-.parshan-icon, .verse-audio, .verse-bookmark{
-    display:none !important; 
-}
 
 .parshan-minimize.parshan-icon{
     display:relative  !important;
-}
-
-#selection-menu{
-    display: none !important;
 }
