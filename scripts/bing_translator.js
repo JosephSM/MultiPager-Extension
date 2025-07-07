@@ -3,8 +3,8 @@ window.addEventListener("message", (e) => {
   if (e.origin !== "https://josephsm.github.io") return;
 
   const [prop, val, obj] = e.data;
-  console.log("Iframe received forwarded message:", prop, val, obj);
   if (prop === "selection") {
+    console.log("Iframe received forwarded message:", prop, val, obj);
     const el = document.getElementById("tta_input_ta");
     el.innerText = val;
     el.dispatchEvent(new Event("input", { bubbles: true }));

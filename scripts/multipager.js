@@ -1,16 +1,6 @@
-console.log("multipager.js");
-// console.log(document);
-
-// document.addEventListener("mouseup", (e) => {
-//   var iframe = document.getElementById("Sefaria");
-//   var idoc = iframe.contentDocument || iframe.contentWindow.document; // ie compatibility
-
-//   console.log(idoc.getSelection().toString());
-// });
 if (window === window.top) {
   // inside iframe
 
-  //THIS IS BE DONE DIRECTLY ON THE INDEX.HTML PAGE!!!!!!!!
   var eventMethod = window.addEventListener
     ? "addEventListener"
     : "attachEvent";
@@ -19,6 +9,7 @@ if (window === window.top) {
 
   eventer(messageEvent, function (e) {
     let [prop, val, obj] = e.data;
+    //THIS IS BE DONE DIRECTLY ON THE INDEX.HTML PAGE!!!!!!!!
     // let iframe = Array.from(document.querySelectorAll("iframe")).filter((x) => x.contentWindow === e.source)[0]
     // let title = Array.from(document.querySelectorAll(".accordian-item>div")).filter(x => x.querySelector("iframe").contentWindow === e.source)[0].firstElementChild.innerText
     // if (prop === "noscroll")
@@ -35,14 +26,6 @@ if (window === window.top) {
       }
     }
   });
-}
-
-if (window.location !== window.parent.location) {
-  // The page is in an iFrames
-  console.log("The page is in an iFrame");
-} else {
-  // The page is not in an iFrame
-  console.log("The page is not in an iFrame");
 }
 
 window.addEventListener("message", function (e) {
