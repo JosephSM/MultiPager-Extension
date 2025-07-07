@@ -124,6 +124,12 @@
       "all_frames": true
     },
     {
+      "js": ["scripts/yutorahnav.js"],
+      "css": ["styles/yutorahnav.css"],
+      "matches": ["https://yutorah.org/mobileNav?showNav*"],
+      "all_frames": true
+    },
+    {
       "js": ["scripts/chabaddailytorah.js"],
       "css": ["styles/chabaddailytorah.css"],
       "matches": ["https://www.chabad.org/dailystudy/*.asp*"],
