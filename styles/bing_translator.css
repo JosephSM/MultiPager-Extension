@@ -10,3 +10,7 @@
 tbody{
     height: 100vh !important;
 }
+
+html{
+    overflow-x: hidden;
+}
