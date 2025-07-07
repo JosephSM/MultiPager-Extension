@@ -17,14 +17,18 @@ if (window === window.top) {
     // else if (prop === "scrollY"){
     //     settingsProxy.accordions[title].scrollY = val
     // }
-    console.log(`Prop ${prop} set to ${val} on ${e.origin}`, e);
-    const iframes = Array.from(document.querySelectorAll("iframe"));
-    for (const iframe of iframes) {
-      // Don't send it back to the source iframe
-      if (iframe.contentWindow !== e.source) {
-        iframe.contentWindow.postMessage([prop, val, obj], "*");
-      }
-    }
+
+    // console.log(`Prop ${prop} set to ${val} on ${e.origin}`, e);
+    // const iframes = Array.from(document.querySelectorAll("iframe"));
+
+    // for (const iframe of iframes) {
+    //   // Don't send it back to the source iframe
+    //   if (iframe.contentWindow !== e.source) {
+    //     iframe.contentWindow.postMessage([prop, val, obj], "*");
+    //   } else if (prop === "Page Loaded") {
+    //     iframe.contentWindow.postMessage(["Settings Drop", "hello", "hi"], "*");
+    //   }
+    // }
   });
 }
 
