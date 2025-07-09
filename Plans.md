@@ -4,8 +4,9 @@
 
 - [ ] Refresh Buttons on iframes
 - [ ] Toggle Save paramSignature vs individual iframe title
-- [ ] Save noscroll settings
-- [ ] Save ScrollY position
+- [x] Save noscroll settings
+- [x] Save ScrollY position
 - [ ] Media Player, back 15s, 
 - [ ] Media TimeStamp Marker
 - [ ] Detect Torah reference links i.e. Avodah-Zara 4 -> josephsm.github.io/
+- [ ] Move up/down accordion - temp1.parentElement.insertBefore(temp1, temp1.previousElementSibling) - temp1.parentElement.insertBefore(temp1.nextElementSibling, temp1)
